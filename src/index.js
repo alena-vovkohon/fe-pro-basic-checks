@@ -13,32 +13,16 @@ console.log(capitalizeString('test test test'));
  */
 export const fenceString = function (string) {
     let newString = string.split('');
-    let newArr = newString.map((item) => {
-        console.log(item)
-       
-        if (item % 2 === 0) {
-            item.toLocaleLowerCase()
-        } else {
-            item.toLocaleUpperCase()
-        }
+    let newArr = [];
+    newString.forEach((item, index) => {
+       if (index % 2 === 0) {
+           newArr.push(item.toLocaleLowerCase())
+       } else {
+           newArr.push(item.toLocaleUpperCase())
+       }
     })
-        return newArr;
+        return newArr.join(' ');
 
-    // let newString = string.split('');
-    // let simbl1;
-    // let simbl2;
-    // let newArr = [];
-    
-    // for (let i = 0; i < newString.length; i += 1){
-    //     if (i % 2 === 0) {
-    //         simbl1 = newString[i].toLocaleLowerCase();
-    //         newArr.push(simbl1);
-    //     } else {
-    //         simbl2 = newString[i].toLocaleUpperCase();
-    //         newArr.push(simbl2);
-    //     }
-    // }
-    // return newArr.join(' ');
 };
 console.log(fenceString('Hi all to all and all'));
 
