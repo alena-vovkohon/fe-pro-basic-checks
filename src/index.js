@@ -14,13 +14,14 @@ console.log(capitalizeString('test test test'));
 export const fenceString = function (string) {
     let newString = string.split('');
     let newArr = [];
-    newString.forEach((item, index) => {
+    newString.filter((item, index) => {
        if (index % 2 === 0) {
            newArr.push(item.toLocaleLowerCase())
        } else {
            newArr.push(item.toLocaleUpperCase())
        }
     })
+    console.log(newString)
         return newArr.join(' ');
 
 };
