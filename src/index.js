@@ -20,7 +20,7 @@ export function fenceString (string) {
            newArr.push(item.toLocaleUpperCase())
        }
     })
-        return newArr.join(' ');
+        return newArr.join('');
 };
 
 
