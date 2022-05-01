@@ -84,7 +84,7 @@ export const reducerSwitch = function (action, string) {
 export const consoleLoggerWordsForOf = (string) => {
     let newString = string.split('');
     for (const variable of newString) {
-       return variable;
+        console.log(variable);
     }
 }
 
@@ -95,7 +95,7 @@ export const consoleLoggerWordsForOf = (string) => {
 export const consoleLoggerWordsFor = (string) => {
     let newString = string.split('');
     for (let i = 0; i < newString.length; i += 1) {
-        return newString[i];
+        console.log(newString[i]);
     };
 }
 
@@ -107,11 +107,9 @@ export const consoleLoggerWordsFor = (string) => {
 export const consoleLoggerWordsWhile = (string) => {
     let newString = string.split('');
     let length = newString.length;
-    let item
     while (length > 0) {
-       item = newString[newString.length - length];
+        console.log(newString[newString.length - length]);
         length--;
-        return item
     };
 }
 
@@ -123,6 +121,6 @@ export const consoleLoggerWordsSplit = (string) => {
 
     for (let i = 0; i < string.length; i += 1){
         let newString = string[i].split('').join('');
-       return newString;
+        console.log(newString);
     }
 }
