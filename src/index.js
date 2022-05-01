@@ -3,13 +3,8 @@
  * @param {string} string
  * @returns {string}
  */
-export const capitalizeString = (string) => {
-    let newString = string.split(' ');
-    for (let i = 0; i < newString.length; i += 1) {
-        newString[i] = newString[i][0].toUpperCase() + newString[i].slice(1);
-    }     
-    return newString.join(' ');
-};
+export const capitalizeString = (string) => string.split(' ').map((item) => item[0].toUpperCase() + item.slice(1)).join(' ')
+
 console.log(capitalizeString('test test test'));
 /**
  * Должна быть function declaration
@@ -17,22 +12,33 @@ console.log(capitalizeString('test test test'));
  * @returns {string}
  */
 export const fenceString = function (string) {
-
     let newString = string.split('');
-    let simbl1;
-    let simbl2;
-    let newArr = [];
-    
-    for (let i = 0; i < newString.length; i += 1){
-        if (i % 2 === 0) {
-            simbl1 = newString[i].toLocaleLowerCase();
-            newArr.push(simbl1);
+    let newArr = newString.map((item) => {
+        console.log(item)
+       
+        if (item % 2 === 0) {
+            item.toLocaleLowerCase()
         } else {
-            simbl2 = newString[i].toLocaleUpperCase();
-            newArr.push(simbl2);
+            item.toLocaleUpperCase()
         }
-    }
-    return newArr.join(' ');
+    })
+        return newArr;
+
+    // let newString = string.split('');
+    // let simbl1;
+    // let simbl2;
+    // let newArr = [];
+    
+    // for (let i = 0; i < newString.length; i += 1){
+    //     if (i % 2 === 0) {
+    //         simbl1 = newString[i].toLocaleLowerCase();
+    //         newArr.push(simbl1);
+    //     } else {
+    //         simbl2 = newString[i].toLocaleUpperCase();
+    //         newArr.push(simbl2);
+    //     }
+    // }
+    // return newArr.join(' ');
 };
 console.log(fenceString('Hi all to all and all'));
 
@@ -93,12 +99,6 @@ export const reducerSwitch = function (action, string) {
     }
     return newStringReducer
 };
-console.log(reducerIf('uppercase', 'string')); // STRING
-console.log(reducerIf('lowercase', 'STRing')); // string
-console.log(reducerIf('fence', 'string')); // sTrInG
-console.log(reducerIf('capitalize', 'test test')); // Test Test
-console.log(reducerIf('bla', 'string')); // string
-
 
 /**
  Стрелочная
@@ -111,7 +111,6 @@ export const consoleLoggerWordsForOf = (string) => {
     }
 }
 
-consoleLoggerWordsForOf('test');
 /**
  Стрелочная
  * @param {string} string
@@ -122,7 +121,6 @@ export const consoleLoggerWordsFor = (string) => {
         console.log(newString[i]);
     };
 }
-    consoleLoggerWordsFor('test');
 
 /**
  Стрелочная
