@@ -10,10 +10,10 @@ export const capitalizeString = (string) => string.split(' ').map((item) => item
  * @param {string} string
  * @returns {string}
  */
-export const fenceString = function (string) {
+export function fenceString (string) {
     let newString = string.split('');
     let newArr = [];
-    newString.filter((item, index) => {
+    newString.forEach((item, index) => {
        if (index % 2 === 0) {
            newArr.push(item.toLocaleLowerCase())
        } else {
@@ -21,7 +21,6 @@ export const fenceString = function (string) {
        }
     })
         return newArr.join(' ');
-
 };
 
 
