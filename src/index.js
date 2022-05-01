@@ -76,7 +76,7 @@ export const reducerSwitch = function (action, string) {
             newStringReducer = fenceString(string);
             break;
         case 'capitalize':
-            newStringReducer = fenceString(string);
+            newStringReducer = capitalizeString(string);
             break;
         default:
             newStringReducer = string;
