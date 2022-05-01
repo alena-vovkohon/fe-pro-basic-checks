@@ -5,7 +5,6 @@
  */
 export const capitalizeString = (string) => string.split(' ').map((item) => item[0].toUpperCase() + item.slice(1)).join(' ')
 
-console.log(capitalizeString('test test test'));
 /**
  * Должна быть function declaration
  * @param {string} string
@@ -21,11 +20,9 @@ export const fenceString = function (string) {
            newArr.push(item.toLocaleUpperCase())
        }
     })
-    console.log(newString)
         return newArr.join(' ');
 
 };
-console.log(fenceString('Hi all to all and all'));
 
 
 
@@ -50,11 +47,6 @@ export const reducerIf = function (action, string) {
     }
     return newStringReducer;
 };
-console.log(reducerIf('uppercase', 'string')); // STRING
-console.log(reducerIf('lowercase', 'STRing')); // string
-console.log(reducerIf('fence', 'string')); // sTrInG
-console.log(reducerIf('capitalize', 'test test')); // Test Test
-console.log(reducerIf('bla', 'string')); // string
 
 
 /**
@@ -92,7 +84,7 @@ export const reducerSwitch = function (action, string) {
 export const consoleLoggerWordsForOf = (string) => {
     let newString = string.split('');
     for (const variable of newString) {
-       console.log(variable);
+       return variable;
     }
 }
 
@@ -103,7 +95,7 @@ export const consoleLoggerWordsForOf = (string) => {
 export const consoleLoggerWordsFor = (string) => {
     let newString = string.split('');
     for (let i = 0; i < newString.length; i += 1) {
-        console.log(newString[i]);
+        return newString[i];
     };
 }
 
@@ -112,13 +104,14 @@ export const consoleLoggerWordsFor = (string) => {
  * @param {string} string
  */
 
- console.log('/////////////////')
 export const consoleLoggerWordsWhile = (string) => {
     let newString = string.split('');
     let length = newString.length;
+    let item
     while (length > 0) {
-        console.log(newString[newString.length - length]);
+       item = newString[newString.length - length];
         length--;
+        return item
     };
 }
 
@@ -130,6 +123,6 @@ export const consoleLoggerWordsSplit = (string) => {
 
     for (let i = 0; i < string.length; i += 1){
         let newString = string[i].split('').join('');
-        console.log(newString);
+       return newString;
     }
 }
