@@ -13,7 +13,7 @@ export const capitalizeString = (string) => string.split(' ').map((item) => item
 export function fenceString (string) {
     let newString = string.split('');
     let newArr = [];
-    newString.map((item, index) => {
+    newString.filter((item, index) => {
        if (index % 2 === 0) {
            newArr.push(item.toLocaleLowerCase())
        } else {
