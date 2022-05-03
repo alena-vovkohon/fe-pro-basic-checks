@@ -3,7 +3,7 @@
  * @param {string} string
  * @returns {string}
  */
-export const capitalizeString = (string) => string.split(' ').map((item) => item[0].toUpperCase() + item.slice(1)).join(' ')
+export const capitalizeString = (string) => string.split(' ').map((item) => `${item[0].toUpperCase()}${item.slice(1)}`).join(' ')
 
 /**
  * Должна быть function declaration
@@ -13,7 +13,7 @@ export const capitalizeString = (string) => string.split(' ').map((item) => item
 export function fenceString (string) {
     let newString = string.split('');
     let newArr = [];
-    newString.filter((item, index) => {
+    newString.map((item, index) => {
        if (index % 2 === 0) {
            newArr.push(item.toLocaleLowerCase())
        } else {
@@ -116,10 +116,4 @@ export const consoleLoggerWordsWhile = (string) => {
  Стрелочная
  * @param {string} string
  */
-export const consoleLoggerWordsSplit = (string) => {
-
-    for (let i = 0; i < string.length; i += 1){
-        let newString = string[i].split('').join('');
-        console.log(newString);
-    }
-}
+export const consoleLoggerWordsSplit = (string) => string.split('').forEach((item) => console.log(item))
